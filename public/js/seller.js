@@ -21,6 +21,7 @@ window.onload = () => {
         location.replace('/login');
     }
 }
+
 showApplyFormBtn.addEventListener('click', () => {
     becomeSellerElement.classList.add('hide');
     applyForm.classList.remove('hide');

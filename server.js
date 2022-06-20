@@ -28,16 +28,6 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(staticPath, 'index.html'));
 })
 
-// product route
-app.use('/product', (req, res) => {
-    res.sendFile(path.join(staticPath, "product.html"))
-})
-
-// search route
-app.use('/search', (req, res) => {
-    res.sendFile(path.join(staticPath, "search.html"))
-})
-
 //signup route
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(staticPath, "signup.html"))
@@ -141,6 +131,15 @@ app.post('/seller', (req, res) => {
     }
 })
 
+// product route
+app.use('/product', (req, res) => {
+    res.sendFile(path.join(staticPath, "product.html"))
+})
+
+// search route
+app.use('/search', (req, res) => {
+    res.sendFile(path.join(staticPath, "search.html"))
+})
 
 // 404 route
 

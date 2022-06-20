@@ -63,6 +63,5 @@ const showAlert = (msg) => {
     alertBox.classList.add('show');
     setTimeout(() => {
         alertBox.classList.remove('show');
-
     }, 3000);
 }

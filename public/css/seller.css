@@ -89,3 +89,8 @@ body{
     display: block;
     margin: auto;
 }
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
