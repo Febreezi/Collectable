@@ -21,6 +21,7 @@ const tac = document.querySelector('#terms-and-cond') || null;
 const notification = document.querySelector('#notification') || null;
 
 submitBtn.addEventListener('click', () => {
+    if(name != null) { //signup page
     if (name.value.length < 3) {
         showAlert('name must be 3 or more letters long');
         } else if (!email.value.length) {
@@ -44,29 +45,19 @@ submitBtn.addEventListener('click', () => {
                 notification: notification.checked,
                 seller: false
                 })
+            } 
+        }  else {
+            // login page
+            if (!email.value.length || !password.value.length) {
+             showAlert('fill all the inputs');
+
+            } else {
+
+            loader.style.display = 'block';
+            sendData('/login', {
+                email: email.value,
+                password: password.value,
+                })
             }
+         }           
 })
-
-//send data function
-const sendData = (path, data) => {
-    fetch(path, {
-        method: 'post',
-        headers: new Headers({'Content-Type': 'application/json'}),
-        body: JSON.stringify(data)
-    }).then((res) => res.json())
-    .then(response => {
-        console.log(response);
-    })
-}
-
-//alert function
-const showAlert = (msg) => {
-    let alertBox = document.querySelector('.alert-box');
-    let alertMsg = document.querySelector('.alert-msg');
-    alertMsg.innerHTML = msg;
-    alertBox.classList.add('show');
-    setTimeout(() => {
-        alertBox.classList.remove('show');
-
-    }, 3000);
-}
