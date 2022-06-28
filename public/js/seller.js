@@ -1,4 +1,6 @@
 let loader = document.querySelector('.loader');
+let user = JSON.parse(sessionStorage.user || null);
+
 
 const becomeSellerElement = document.querySelector('.become-seller');
 const productListingElement = document.querySelector('.product-listing');
@@ -6,21 +8,15 @@ const applyForm = document.querySelector('.apply-form');
 const showApplyFormBtn = document.querySelector('#apply-btn');
 
 window.onload = () => {
-    if(sessionStorage.user){
-        let user = JSON.parse(sessionStorage.user);
+    if(user){
         if(compareToken(user.authToken, user.email)){
             if(!user.seller){
-                becomeSellerElement.classList.remove('hide');
+                becomeSellerElement.classList.remove(' hide');
             } else{
-                productListingElement.classList.remove('hide');
-            }
-        } else{
-            location.replace('/login');
-        }
-    } else{
-        location.replace('/login');
-    }
-}
+                loader.style.display = 'block';
+                setupProducts();
+            }}
+}}
 
 showApplyFormBtn.addEventListener('click', () => {
     becomeSellerElement.classList.add('hide');
@@ -55,4 +51,26 @@ applyFormButton.addEventListener('click', () => {
             email: JSON.parse(sessionStorage.user).email
         })
     }
+    becomeSellerElement.classList.add('hide')
+    applyForm.classList.add('hide')
+    productListingElement.classList.remove('hide');
 })
+
+const setupProducts = () => {
+    fetch('/get-products', {
+        method: 'post',
+        headers: new Headers({"Content-Type": "application/json"}),
+        body: JSON.stringify({email: user.email})
+    })
+    .then(res => res.json())
+    .then(data =>  {
+        loader.style.display = null;
+        productListingElement.classList.remove('hide');
+        if(data == 'no products'){
+            let emptySvg = document.querySelector('.no-product-image');
+            emptySvg.classList.remove('hide');
+        } else{
+            data.forEach(product => createProduct(product));
+        }
+    });
+}
