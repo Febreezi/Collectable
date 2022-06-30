@@ -156,7 +156,6 @@ const setFormsData = (data) => {
     discountPercentage.value = data.discount;
     sellingPrice.value = data.sellPrice;
     stock.value = data.stock;
-    tags.value = data.tags;
 
     // set up images
     imagePaths = data.images;

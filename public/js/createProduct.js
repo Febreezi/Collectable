@@ -14,7 +14,7 @@ const createProduct = (data) => {
             ${data.draft ? `<span class="tag">Draft</span>`: ''}
             <span class="tag">Draft</span>
             <img src="${data.images[0]}" class="product-thumb" alt="">
-            <button class="card-action-btn edit-btn"><img src="/public/img/edit.png" alt=""></button>
+            <button class="card-action-btn edit-btn" onclick="openEditor()"><img src="/public/img/edit.png" alt=""></button>
             <button class="card-action-btn open-btn" onclick="location.href ='/${data.id}'"><img src="/public/img/open.png" alt=""></button>
             <button class="card-action-btn delete-popup-btn" onclick="openDeletePopup('${data.id}')"><img src="/public/img/delete.png" alt=""></button>
         

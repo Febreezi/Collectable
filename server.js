@@ -221,7 +221,7 @@ app.post('/add-product', (req, res) => {
 // get products
 app.post('/get-products', (req, res) => {
     let { email, id } = req.body;
-    let docRef = db.collection('products').doc(id).where('email', '==', email);
+    let docRef = id ? db.collection('products').doc(id) : db.listCollections('products').where('email', '==', email);
 
     docRef.get()
     .then(products => {
