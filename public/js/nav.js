@@ -21,12 +21,12 @@ nav.innerHTML = `
             </div>
             <ul class="links-container">
                 <li class="link-item"><a href="../public/index.html" class="link">home</a></li>
-                <li class="link-item"><a href="../404.html" class="link">cards</a></li>
-                <li class="link-item"><a href="../404.html" class="link">hats</a></li>
+                <li class="link-item"><a href="../public/404.html" class="link">cards</a></li>
+                <li class="link-item"><a href="../public/404.html" class="link">hats</a></li>
                 <li class="link-item"><a href="../public/product.html" class="link">sneakers</a></li>
-                <li class="link-item"><a href="../404.html" class="link">action figures</a></li>
-                <li class="link-item"><a href="../404.html" class="link">stickers</a></li>
-                <li class="link-item"><a href="../404.html" class="link">backpacks</a></li>
+                <li class="link-item"><a href="../public/404.html" class="link">action figures</a></li>
+                <li class="link-item"><a href="../public/404.html" class="link">stickers</a></li>
+                <li class="link-item"><a href="../public/404.html" class="link">backpacks</a></li>
             </ul>
 `;
     
@@ -59,7 +59,7 @@ window.onload = () => {
         popuptext.innerHTML = 'log in to place order';
         actionBtn.innerHTML = 'log in';
         actionBtn.addEventListener('click', () => {
-            location.href = '../login';
+            location.href = '../public/login.html';
         }) 
     }
 }
