@@ -3,30 +3,30 @@ const createNav = () => {
         
 nav.innerHTML = `
 <div class="nav">
-                <img src="/public/img/collection.png" class="brand-logo" alt="" height="10">
+                <img src="../public/img/collection.png" class="brand-logo" alt="" height="10">
                 <div class="nav-items">
                     <div class="search">
                         <input type="text" class="search-box" placeholder="search brand, product">
                         <button class="search-btn">search</button>
                     </div>
                     <a>
-                        <img src="/public/img/user.png" id="user-img" alt="" width="30" height="30">
+                        <img src="../public/img/user.png" id="user-img" alt="" width="30" height="30">
                         <div class="login-logout-popup hide">
                             <p class="account-info">Logged in as, name</p>
                             <button class="btn" id="user-btn">Log out</button>
                         </div>
                     </a>
-                    <a href="#"><img src="/public/img/shopping-cart-logo.png" alt="" width="50" height="40"></a>
+                    <a href="#"><img src="../public/img/shopping-cart-logo.png" alt="" width="50" height="40"></a>
                 </div>
             </div>
             <ul class="links-container">
-                <li class="link-item"><a href="/public/index.html" class="link">home</a></li>
-                <li class="link-item"><a href="/404.html" class="link">cards</a></li>
-                <li class="link-item"><a href="/404.html" class="link">hats</a></li>
-                <li class="link-item"><a href="/public/product.html" class="link">sneakers</a></li>
-                <li class="link-item"><a href="/404.html" class="link">action figures</a></li>
-                <li class="link-item"><a href="/404.html" class="link">stickers</a></li>
-                <li class="link-item"><a href="/404.html" class="link">backpacks</a></li>
+                <li class="link-item"><a href="../public/index.html" class="link">home</a></li>
+                <li class="link-item"><a href="../404.html" class="link">cards</a></li>
+                <li class="link-item"><a href="../404.html" class="link">hats</a></li>
+                <li class="link-item"><a href="../public/product.html" class="link">sneakers</a></li>
+                <li class="link-item"><a href="../404.html" class="link">action figures</a></li>
+                <li class="link-item"><a href="../404.html" class="link">stickers</a></li>
+                <li class="link-item"><a href="../404.html" class="link">backpacks</a></li>
             </ul>
 `;
     

@@ -2,7 +2,7 @@ function createFooter() {
     let footer = document.querySelector('footer');
     footer.innerHTML = `
     <div class="footer-content">
-    <img src="/public/img/collection.png" class="logo" alt="">
+    <img src="../public/img/collection.png" class="logo" alt="">
     <div class="footer-ul-container">
         <ul class="category">
             <li class="category-title">Sneakers</li>
